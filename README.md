@@ -1,4 +1,4 @@
-# Infuse-AI-with-ready-to-use-Deep-Learning-APIs-on-Red-Hat-OpenShift
+# Infuse AI with ready to use Deep Learning APIs on Red Hat OpenShift
 
 
 Data contains a wealth of information that can be used to solve certain types of problems. Traditional data analysis approaches, like a person manually inspecting the data or a specialized computer program that automates the human analysis, quickly reach their limits due to the amount of data to be analyzed or the complexity of the problem.
@@ -76,22 +76,22 @@ cd max-model-prediction-os
 
 The cloned repository contains sample images and utility scripts.
 
-### 3. Set Up OpenShift
+### 4. Set Up OpenShift
 This microservice identifies objects in pictures, enabling you to build applications that need to interpret the content of a picture.
 
 ![od_sample_app](https://user-images.githubusercontent.com/20628307/133518806-b79609d3-2821-4c12-8f17-5d634e4c9066.png)
 
-    1. Under your provisioned Cluster, the Administrator view is displayed by default, switch to the Developer view.  
+1. Under your provisioned Cluster, the Administrator view is displayed by default, switch to the Developer view.  
     
-    ![rhos_web_console_admin_view](https://user-images.githubusercontent.com/20628307/133519502-b9986b41-d842-4207-aa2c-3133bf7e68b2.png)
+![rhos_web_console_admin_view](https://user-images.githubusercontent.com/20628307/133519502-b9986b41-d842-4207-aa2c-3133bf7e68b2.png)
     
-    2. OpenShift organizes related resources in projects. In the lab environment you going to create a project called InfuseAI.
+2. OpenShift organizes related resources in projects. In the lab environment you going to create a project called InfuseAI.
     
-    ```bash 
-      oc new-project infuseai
-    ```
+```bash 
+  oc new-project infuseai
+```
     
-### 4. Deploy the Object Detector microservice Docker image
+### 5. Deploy the Object Detector microservice Docker image
 You can deploy Docker images that are hosted in public or private registries. The MAX-Object-Detector Docker image codait/max-object-detector is hosted on Docker Hub, which is a public registry.
     1. Select +Add and choose Container Image as source.
     ![ui_add_something](https://user-images.githubusercontent.com/20628307/133519850-84cfee65-915c-40a8-a236-9592ef394804.png)
@@ -156,7 +156,7 @@ You can customize the behavior of the deployed microservice by setting environme
 
 Open the displayed route URL to access the microservice's OpenAPI specification, which documents the REST API endpoints applications and services can call to utilize the microservice.
 
-### 5. Testing the Application
+### 6. Testing the Application
 Open the displayed route URL to access the microservice's OpenAPI specification, which documents the REST API endpoints applications and services can call to utilize the microservice.
 
 ![view_od_openapi_spec](https://user-images.githubusercontent.com/20628307/133576784-84ee8c64-dbf5-4016-bd46-6f1d448ef45a.png)
