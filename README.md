@@ -111,19 +111,17 @@ Click on the magnifying glass next to the image name (or press Enter) to load th
 ```
 
 5. In the General section the Name field is pre-populated with the Docker image name. OpenShift uses this name to identify the resources being created when the application is deployed.
-![Uploading Screenshot (317).png…]() 
 
-If you append, modify, or delete a few characters, you'll notice how the name change is impacting the generated image stream name, the deployment configuration name, the service name, and the host name. (However, use the default max-object-detector in this lab!)
+
+If you append, modify, or delete a few characters, you'll notice how the name change is impacting the generated image stream name, the deployment configuration name, the service name, and the host name. 
 
 6.  In the Resources section make sure Deployment is selected as resource type.
 
-![Uploading ui_configure_deployment_resource_type.png…]()
 
 7. In the Advanced Options section check Create a route to the application to expose the deployed application to the public. (If the option is not checked the application is only visible within the cluster.)
 
 
 You can customize the route configuration by clicking the Routing link, for example by configuring whether to expose an unsecured route (the default) or a secured route. In this lab the default settings are fine.
-
 
 
 8. Click the Deployment link to customize the deployment.
@@ -187,8 +185,22 @@ Test the microservice by selecting an image of your choice and changing the prob
 ![view_od_sample_app-1](https://user-images.githubusercontent.com/20628307/133577156-b9a5acef-49a4-44dc-9418-377b6bca3f75.png)
 
 
+Next Steps:
 
+Visit: https://developer.ibm.com/tutorials/openshift-ai-integration-max-model-deployment-labs/
 
+On this link, you can find additional deep learning tutorials and a free cluster to use in case you run out of time with the webinar's cluster. :)
+
+Thank you.
+Sbusiso Mkhombe
+
+Sbusiso.Mkhomb@ibm.com
+
+Cloud Engineer, Hybrid Cloud Build Team
+
+IBM Technology Sales
+
+27 72 788 4578 Mobile
 
 
 
