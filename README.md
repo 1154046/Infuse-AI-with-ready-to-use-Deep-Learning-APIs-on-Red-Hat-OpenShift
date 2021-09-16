@@ -93,45 +93,45 @@ This microservice identifies objects in pictures, enabling you to build applicat
     
 ### 5. Deploy the Object Detector microservice Docker image
 You can deploy Docker images that are hosted in public or private registries. The MAX-Object-Detector Docker image codait/max-object-detector is hosted on Docker Hub, which is a public registry.
-    1. Select +Add and choose Container Image as source.
-    ![ui_add_something](https://user-images.githubusercontent.com/20628307/133519850-84cfee65-915c-40a8-a236-9592ef394804.png)
-    2. Select the Image name from external registry radio button.
-    3. Enter codait/max-object-detector as Image Name.
+1. Select +Add and choose Container Image as source.
+![ui_add_something](https://user-images.githubusercontent.com/20628307/133519850-84cfee65-915c-40a8-a236-9592ef394804.png)
+2. Select the Image name from external registry radio button.
+3. Enter codait/max-object-detector as Image Name.
     
-    Click on the magnifying glass next to the image name (or press Enter) to load the Docker image's metadata.
+Click on the magnifying glass next to the image name (or press Enter) to load the Docker image's metadata.
     
-    4. Review the deployment configuration for the Docker image.
-      Sample Output:
-      ```
-      codait/max-object-detector Mar 31, 9:07 am, 476.4 MiB, 14 layers
-      Image Stream max-object-detector:latest will track this image.
-      This image will be deployed in Deployment Config max-object-detector.
-      Port 5000/TCP will be load balanced by Service max-object-detector.
-      Other containers can access this service through the hostname max-object-detector.
-    ```
-  
-    5. In the General section the Name field is pre-populated with the Docker image name. OpenShift uses this name to identify the resources being created when the application is deployed.
-    ![Uploading Screenshot (317).png…]() 
-    
-    If you append, modify, or delete a few characters, you'll notice how the name change is impacting the generated image stream name, the deployment configuration name, the service name, and the host name. (However, use the default max-object-detector in this lab!)
-        
-    6.  In the Resources section make sure Deployment is selected as resource type.
+4. Review the deployment configuration for the Docker image.
+  Sample Output:
+  ```
+  codait/max-object-detector Mar 31, 9:07 am, 476.4 MiB, 14 layers
+  Image Stream max-object-detector:latest will track this image.
+  This image will be deployed in Deployment Config max-object-detector.
+  Port 5000/TCP will be load balanced by Service max-object-detector.
+  Other containers can access this service through the hostname max-object-detector.
+```
 
-    ![Uploading ui_configure_deployment_resource_type.png…]()
-    
-    7. In the Advanced Options section check Create a route to the application to expose the deployed application to the public. (If the option is not checked the application is only visible within the cluster.)
-    
-        
-    You can customize the route configuration by clicking the Routing link, for example by configuring whether to expose an unsecured route (the default) or a secured route. In this lab the default settings are fine.
+5. In the General section the Name field is pre-populated with the Docker image name. OpenShift uses this name to identify the resources being created when the application is deployed.
+![Uploading Screenshot (317).png…]() 
+
+If you append, modify, or delete a few characters, you'll notice how the name change is impacting the generated image stream name, the deployment configuration name, the service name, and the host name. (However, use the default max-object-detector in this lab!)
+
+6.  In the Resources section make sure Deployment is selected as resource type.
+
+![Uploading ui_configure_deployment_resource_type.png…]()
+
+7. In the Advanced Options section check Create a route to the application to expose the deployed application to the public. (If the option is not checked the application is only visible within the cluster.)
 
 
-  
-  8. Click the Deployment link to customize the deployment.
+You can customize the route configuration by clicking the Routing link, for example by configuring whether to expose an unsecured route (the default) or a secured route. In this lab the default settings are fine.
 
-    
+
+
+8. Click the Deployment link to customize the deployment.
+
+
 You can customize the behavior of the deployed microservice by setting environment variables. For example, you can enable Cross-Origin Resource Sharing support by setting the CORS_ENABLE variable in the deployment configuration to true. If CORS is enabled (which it is not by default) client applications that run in a web browser can call the microservice endpoints.
 
-  9. Click the Scaling link to configure how many copies of the deployed microservice you want to run. In this lab the default setting of 1 is sufficient because you are the only user who will utilize this service.
+9. Click the Scaling link to configure how many copies of the deployed microservice you want to run. In this lab the default setting of 1 is sufficient because you are the only user who will utilize this service.
 
 
 10. Click the Resource Limit link to configure the minimum and maximum amount of CPU and RAM the deployed microservice can utilize. Since the object detector microservice requires a minimum of 2 GB of RAM, set memory request and memory limit to 2 Gi.
