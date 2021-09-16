@@ -134,11 +134,8 @@ You can customize the behavior of the deployed microservice by setting environme
   9. Click the Scaling link to configure how many copies of the deployed microservice you want to run. In this lab the default setting of 1 is sufficient because you are the only user who will utilize this service.
 
 
-10. Click the Resource Limit link to configure the minimum and maximum amount of CPU and RAM the deployed microservice can utilize. Since the object detector microservice requires a minimum of 2 GB of RAM, set memory request and memory limit to 2 Gi, as shown below.
+10. Click the Resource Limit link to configure the minimum and maximum amount of CPU and RAM the deployed microservice can utilize. Since the object detector microservice requires a minimum of 2 GB of RAM, set memory request and memory limit to 2 Gi.
 
-Configure resource limits
-
-![Uploading ui_configure_resource_limits.png…]()
 
 11. Click Create to deploy the microservice. The deployment toplogy view is displayed.
 
@@ -148,6 +145,55 @@ Configure resource limits
 
 
 12. Click the max-object-detector deployment label (marked with a dashed arrow in the screen capture) to open the deployment configuration panel.
+
+![ui_view_deployment](https://user-images.githubusercontent.com/20628307/133576520-41110a9f-272c-4217-8590-47c72f03ccdf.png)
+
+13. Select the Resources tab, which provides you with access to the log files and a link to the microservice's public route.
+
+![image](https://user-images.githubusercontent.com/20628307/133576563-93f48423-4f41-4ece-bd87-3a0825126cb5.png)
+
+14.Before proceeding make sure the pod status is running, as shown in the screen capture above.
+
+Open the displayed route URL to access the microservice's OpenAPI specification, which documents the REST API endpoints applications and services can call to utilize the microservice.
+
+### 5. Testing the Application
+Open the displayed route URL to access the microservice's OpenAPI specification, which documents the REST API endpoints applications and services can call to utilize the microservice.
+
+![view_od_openapi_spec](https://user-images.githubusercontent.com/20628307/133576784-84ee8c64-dbf5-4016-bd46-6f1d448ef45a.png)
+
+
+Expand the model twistie to reveal the microservice endpoints. The Object Detector exposes three endpoints. The GET /model/metadata endpoint provides information about the microservice. The GET /model/labels endpoint identifies the kinds of objects the microservice can detect in an image. The POST /model/predict endpoint detects objects in an image that is included in the payload when the endpoint is invoked.
+
+
+![view_od_endpoints-1](https://user-images.githubusercontent.com/20628307/133576872-88f613e0-3294-4e1c-bbd2-ce23433ec9a5.png)
+
+You can try the endpoints by clicking on the name.
+
+Click GET /model/labels, Try it out, and Execute to retrieve the list of objects that the microservice can detect in an image.
+
+![view_od_labels_endpoint](https://user-images.githubusercontent.com/20628307/133576942-75810004-fb76-4cee-993e-c5af0b4f11f4.png)
+
+The response should look as follows and includes how many types of objects can be detected and what they are.
+
+https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/deploy-ai-microservices-on-kubernetes/images/view_od_labels_endpoint_response.png
+
+The Object Detector microservice includes a small embedded demo application that illustrates how a web application can consume the /model/predict endpoint.
+
+
+Next, Open the embedded sample application by appending /app to the public route of your deployed microservice, e.g. http://infuseai-os-.../app.
+
+Test the microservice by selecting an image of your choice and changing the probability threshold. By lowering the threshold you can see objects that the Object Detector deep learning model is less certain about.
+
+![view_od_sample_app-1](https://user-images.githubusercontent.com/20628307/133577156-b9a5acef-49a4-44dc-9418-377b6bca3f75.png)
+
+
+
+
+
+
+
+
+
 
 
 
